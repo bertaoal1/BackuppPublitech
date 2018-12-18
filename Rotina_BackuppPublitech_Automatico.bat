@@ -727,7 +727,7 @@ C: & CD\%versaoPostgres%
 ::pg_dump.exe -h %P_Host% -p %P_Porta% -U postgres -F c -v -f "%Caminho%\%pastaDiaria%\%NomeArquivo%" %P_Base%
 ::pg_dump -Fc -b -v -Z9 -h %P_Host% -p %P_Porta% -U postgres -d %P_Base% -f "%Caminho%\%pastaDiaria%\%NomeArquivo%"
 
-pg_dump -Fc -b -v -h %P_Host% -p %P_Porta% -U postgres -d %P_Base% -f "%Caminho%\%pastaDiaria%\%NomeArquivo%" > mylogfile.log
+pg_dump -Fc -b -v -h %P_Host% -p %P_Porta% -U postgres -d %P_Base% -f "%Caminho%\%pastaDiaria%\%NomeArquivo%"
 
 PING -n 3 127.0.0.1 >NUL & CLS
 %Unidade%: & CD %Pasta%
