@@ -1,0 +1,66 @@
+pg_dump salva um banco de dados em um arquivo texto ou em outros formatos.
+
+Uso:
+  pg_dump [OPÇÃO]... [NOMEBD]
+
+Opções gerais:
+  -f, --file=ARQUIVO           nome do arquivo ou diretório de saída
+  -F, --format=c|d|t|p         formato do arquivo de saída (personalizado, diretório,
+                               tar, texto (padrão))
+  -j, --jobs=NUM               use esse número de tarefas paralelas para copiar
+  -v, --verbose                modo informações detalhadas
+  -V, --version                mostra informação sobre a versão e termina
+  -Z, --compress=0-9           nível de compressão para formatos comprimidos
+  --lock-wait-timeout=TEMPO    falha após esperar TEMPO por um travamento de tabela
+  -?, --help                   mostra essa ajuda e termina
+
+Opções que controlam a saída do conteúdo:
+  -a, --data-only              copia somente os dados, não o esquema
+  -b, --blobs                  inclui objetos grandes na cópia de segurança
+  -c, --clean                  exclui (remove) bancos de dados antes de criá-lo novamente
+  -C, --create                 inclui comandos para criação dos bancos de dados na cópia de segurança
+  -E, --encoding=CODIFICAÇÃO   copia dados na codificação CODIFICAÇÃO
+  -n, --schema=ESQUEMA         copia somente o(s) esquema(s) especificado(s)
+  -N, --exclude-schema=ESQUEMA NÃO copia o(s) esquema(s) especificado(s)
+  -o, --oids                   inclui OIDs na cópia de segurança
+  -O, --no-owner               ignora restauração do dono dos objetos
+                               no formato texto
+  -s, --schema-only            copia somente o esquema, e não os dados
+  -S, --superuser=NOME         nome de super-usuário a ser usado no formato texto
+  -t, --table=TABELA           copia somente a(s) tabela(s) especificada(s)
+  -T, --exclude-table=TABELA   NÃO copia a(s) tabela(s) especificada(s)
+  -x, --no-privileges          não copia os privilégios (grant/revoke)
+  --binary-upgrade             usado somente por utilitários de atualização
+  --column-inserts             copia dados utilizando comandos INSERT com nomes das colunas
+  --disable-dollar-quoting     desabilita delimitação por cifrão, usa delimitadores do padrão SQL
+  --disable-triggers           desabilita gatilhos durante a restauração do tipo somente dados
+  --enable-row-security        habilita segurança de registros (copia somente conteúdo
+                               que usuário tenha acesso)
+  --exclude-table-data=TABELA  NÃO copia os dados da(s) tabela(s) especificada(s)
+  --if-exists                  use IF EXISTS ao remover objetos
+  --inserts                    copia dados utilizando comandos INSERT, ao invés de comandos COPY
+  --no-security-labels         não copia atribuições de rótulos de segurança
+  --no-synchronized-snapshots  não utiliza instantâneos sincronizados em tarefas paralelas
+  --no-tablespaces             não copia atribuições de tablespaces
+  --no-unlogged-table-data     não copia dados de tabelas unlogged
+  --quote-all-identifiers      todos os identificadores entre aspas, mesmo que não sejam palavras chave
+  --section=SEÇÃO              copia seção especificada (pre-data, data ou post-data)
+  --serializable-deferrable    espera até que a cópia seja executada sem anomalias
+  --snapshot=INSTANTÂNEO       utiliza instantâneo informado para a cópia
+  --use-set-session-authorization
+                               usa comandos SET SESSION AUTHORIZATION ao invés de
+                               comandos ALTER OWNER para definir o dono
+
+Opções de conexão:
+  -d, --dbname=NOMEBD      banco de dados a ser copiado
+  -h, --host=MÁQUINA       máquina do servidor de banco de dados ou diretório do soquete
+  -p, --port=PORTA         número da porta do servidor de banco de dados
+  -U, --username=NOME      conecta como usuário do banco de dados especificado
+  -w, --no-password        nunca pergunta senha
+  -W, --password           pergunta senha (pode ocorrer automaticamente)
+  --role=NOMEROLE          executa SET ROLE antes da cópia de segurança
+
+Se o nome da base de dados não for fornecido, a variável de ambiente
+PGDATABASE é utilizada.
+
+Relate erros a <pgsql-bugs@postgresql.org>.
