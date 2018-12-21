@@ -621,6 +621,10 @@ DEL /F /Q "%Caminho%\zConfig\DropBox_Installers.url"
 ECHO [InternetShortcut]>"%Caminho%\zConfig\CloudDrive_Installers.url"
 ECHO URL=https://bit.ly/PubliInstall>>"%Caminho%\zConfig\CloudDrive_Installers.url"
 :pulaAtalhoInstall
+
+::Criar atalho da pasta CloudDrive
+ECHO [InternetShortcut]>"%Caminho%\Atalho_Pasta_CloudDrive.url"
+ECHO URL=%CaminhoCloud%\CloudDrive>>"%Caminho%\Atalho_Pasta_CloudDrive.url"
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::   00                                                                                                
